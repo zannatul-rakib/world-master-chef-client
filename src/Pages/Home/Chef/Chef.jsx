@@ -12,7 +12,7 @@ const Chef = () => {
     },[])
 
     return (
-        <div className='lg:mx-20 mb-10'>
+        <div className='lg:mx-20 mb-10 grid justify-items-center'>
             <h2 className='text-2xl lg:text-3xl font-bold text-center mb-20'>Meet Our Chefs</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10'>
                 {

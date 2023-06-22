@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { BsFacebook, BsGithub } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -10,13 +10,15 @@ const SignUp = () => {
     const { googleSignIn, githubSignIn, createUser } = useContext(AuthContext);
     
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
-                setError('')
+                setError('');
+                navigate('/');
             })
             .catch(error => {
                 setError(error.message);
@@ -31,6 +33,7 @@ const SignUp = () => {
                 const createdUser = result.user;
                 console.log(createdUser);
                 setError('');
+                navigate('/');
                 
             })
             .catch(error => {
@@ -83,6 +86,7 @@ const SignUp = () => {
             setError('');
             showToastMessage();
             form.reset();
+            navigate('/');
             
         })
             .catch(error => {
@@ -105,7 +109,7 @@ const SignUp = () => {
             <ToastContainer
                 theme="dark"
             />
-            <div className='w-1/2 mx-auto border px-10 py-5 rounded'> 
+            <div className='lg:w-1/2 w-full m-5 border lg:px-10 px-5 py-5 rounded'> 
                 <h4 className='text-accent text-center mb-10 text-2xl font-semibold'>Sign Up Now</h4>
             <form  onSubmit={handleSignUp}>
             <div className="relative z-0 w-full mb-6 group">

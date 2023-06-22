@@ -20,7 +20,7 @@ const ChefDetails = () => {
                     <p>Bio: { bio}</p>
                 </div>
             </div>
-            <div>
+            <div className='grid justify-items-center'>
                 <h2 className='text-accent text-center mb-20 font-bold text-3xl'>Their Famous Recipe</h2>
                 <div className='grid grid-col-1 gap-y-10 lg:grid-cols-3 lg:gap-x-20'>
                 {

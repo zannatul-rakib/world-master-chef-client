@@ -46,7 +46,7 @@ const Login = () => {
              <ToastContainer
                 theme="dark"
             />
-            <div className='w-1/3 mx-auto border px-10 py-5 rounded'>
+            <div className='lg:w-1/3 md:w-1/2 w-full mx-5 border lg:px-10 px-5 py-5 rounded '>
                 <h4 className='text-accent text-center mb-10 text-2xl font-semibold'>Sign In Now</h4>
                 <form onSubmit={handleSignIn}>
                     <div className="mb-6">
