@@ -1,23 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BsFacebook, BsGithub } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const SignUp = () => {
-    const { user,
-        googleSignIn,
-        githubSignIn,
-        createUser
-    } = useContext(AuthContext);
+    const { googleSignIn, githubSignIn, createUser } = useContext(AuthContext);
+    
+    const [error, setError] = useState('');
 
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                setError('')
             })
-            .catch(error => console.log(error.message));
+            .catch(error => {
+                setError(error.message);
+                console.log(error.message);
+                setError(error.message);
+            });
     }
 
     const handleGithubSignIn = () => {
@@ -25,12 +30,18 @@ const SignUp = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                setError('');
+                
             })
-            .catch(error => console.log(error.message));
+            .catch(error => {
+                console.log(error.message);
+                setError(error.message);
+            });
     }
 
     const handleSignUp = (event) => {
         event.preventDefault();
+        setError('');
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
@@ -42,17 +53,58 @@ const SignUp = () => {
         const user = {email,  password, name, photo}
         console.log(user);
 
+        // password validation 
+        if (!/(?=.*[a-z])/.test(password)) {
+            setError("Please should be a lowercase character.");
+            return;
+        }
+        else  if (!/(?=.*[A-Z])/.test(password)) {
+            setError("Please should be a Uppercase character.");
+            return;
+        }
+        else  if (!/(?=.*[0-9])/.test(password)) {
+            setError("Please should be a Number.");
+            return;
+        }
+        else  if (!/(?=.*[@$!%*?&])/.test(password)) {
+            setError("Please should be a Special character.");
+            return;
+        }
+        else if (!password.length > 6) {
+            setError("Password should be 6 character");
+            return;
+        }
+
+
         createUser(email, password)
         .then(result => {
             const createdUser = result.user;
             console.log(createdUser);
+            setError('');
+            showToastMessage();
+            form.reset();
+            
         })
-        .catch(error => console.log(error.message));
+            .catch(error => {
+                console.log(error.message);
+                setError(error.message);
+            });
     }
+
+    const showToastMessage = () => {
+        toast.success('🦄 User Created Successfully', {
+            position: "top-right",
+            autoClose: 3000,
+            theme: "dark",
+            });
+    };
     
 
     return (
         <div className='flex justify-center items-center min-h-screen'>
+            <ToastContainer
+                theme="dark"
+            />
             <div className='w-1/2 mx-auto border px-10 py-5 rounded'> 
                 <h4 className='text-accent text-center mb-10 text-2xl font-semibold'>Sign Up Now</h4>
             <form  onSubmit={handleSignUp}>
@@ -83,10 +135,12 @@ const SignUp = () => {
                     <input type="text" name="photo" id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                     <label htmlFor="floating_company" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phot URL</label>
                 </div>
-            </div>
+                    </div>
+                    <p className='text-[red] mb-4'><small>{error}</small></p>
             <button type="submit" className="text-white btn btn-primary">Sign Up</button>
                 </form>
                 <div className='text-center flex flex-col justify-center items-center'>
+               
                     <p className='my-2'>Or Sign Up With</p>
                     <ul className=' w-28 flex my-3 justify-between items-center'>
                         <li className='cursor-pointer text-xl' onClick={handleGoogleSignIn}>

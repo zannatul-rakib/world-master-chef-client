@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import MenuItem from './MenuItem';
 import logo from "../../../assets/logo.png"
 import { Link } from 'react-router-dom';
 import {FaUserAstronaut} from "react-icons/fa"
+import { AuthContext } from '../../../provider/AuthProvider/AuthProvider';
 
 
 
 const Header = () => {
+    const { logOut, user } = useContext(AuthContext);
+    // console.log(user)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => console.log('user logOut'))
+            .catch(error => console.log(error.message))
+    }
+
     return (
         <div className='container mx-auto'>
             <div className="lg:px-20 bg-base-200">
@@ -35,16 +44,29 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown me-3">
-                        <label tabIndex={0}>
-                        <FaUserAstronaut className='cursor-pointer text-3xl' />      
-                        </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow-xl border bg-base-100 rounded w-20">
-                           <li><Link to="/profile">Profile</Link></li>
-                           <li><Link>Logout</Link></li>
-                        </ul>
-                    </div>
-                <Link to="/login" className='btn btn-primary'>Login</Link>
+                        {
+                            user ? <>             
+                            <button tabIndex={0} id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar" className="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" type="button">
+                                <span className="sr-only">Open user menu</span>
+                                <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo" />
+                            </button>
+                            <div tabIndex={0} id="dropdownAvatar" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                                <div>Bonnie Green</div>
+                                <div className="font-medium truncate">name@flowbite.com</div>
+                                </div>
+                                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
+                                    <li>
+                                        <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                                    </li>
+                                </ul>
+                                <div className="py-2">
+                                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                                </div>
+                            </div>
+                            </> : 
+                        <Link to="/login" className='btn btn-primary'>Login</Link>
+                   }
                 </div>
             </div>
            </div>
