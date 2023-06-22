@@ -8,10 +8,11 @@ import {FaUserAstronaut} from "react-icons/fa"
 
 const Header = () => {
     return (
-        <div className=' container mx-auto'>
-            <div className="navbar bg-base-200 lg:px-20">
+        <div className='container mx-auto'>
+            <div className="lg:px-20 bg-base-200">
+            <div className="navbar ">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown lg:hidden">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>         
                         </label>
@@ -20,10 +21,11 @@ const Header = () => {
                         </ul>
                     </div>
                     <Link to="/">
-                        <div className="avatar">
-                            <div className="rounded-full h-14">
-                                <img src={logo} />
-                            </div>
+                        <div className="mb-6 md:mb-0">
+                            <a href="https://flowbite.com/" className="flex items-center">
+                                <img src={logo} className="h-8 mr-2" alt="FlowBite Logo" />
+                                <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Master Chef</span>
+                            </a>
                         </div>
                     </Link>
                 </div>
@@ -45,6 +47,7 @@ const Header = () => {
                 <Link to="/login" className='btn btn-primary'>Login</Link>
                 </div>
             </div>
+           </div>
         </div>
     );
 };

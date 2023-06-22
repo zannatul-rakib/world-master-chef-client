@@ -9,10 +9,10 @@ const ChefDetails = () => {
     return (
         <div className='lg:mx-20 mx-5 my-20'>
             <div className='flex flex-col lg:flex-row lg:justify-between  lg:items-center gap-10 mb-20' >
-                <div className='flex-1 max-w-[350]'>
-                    <img src={picture} className='max-w-full object-contain' alt="" />
+                <div className='w-[400] h-[500px] overflow-hidden relative'>
+                    <img src={picture} className='w-full h-full object-contain' alt="" />
                 </div>
-                <div className='flex-1 text-white rounded-sm py-20 px-5 shadow-2xl bg-base-200'>
+                <div className=' text-white rounded-sm py-20 px-5 shadow-2xl bg-base-200'>
                     <h2 className='text-2xl font-semibold text-accent mb-5'>{name}</h2>
                     <p>Experience: {experience}</p>
                     <p>Country: {country}</p>
