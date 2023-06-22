@@ -42,7 +42,7 @@ const Header = () => {
                            <li><Link>Logout</Link></li>
                         </ul>
                     </div>
-                <Link to="/login" className='btn'>Login</Link>
+                <Link to="/login" className='btn btn-primary'>Login</Link>
                 </div>
             </div>
         </div>

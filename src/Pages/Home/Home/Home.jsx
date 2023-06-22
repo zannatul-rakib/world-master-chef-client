@@ -5,7 +5,7 @@ import Hero from '../Hero/Hero';
 const Home = () => {
    
     return (
-        <div className='lg:mx-20 my-8'>
+        <div className='my-8 box-border container mx-auto'>
             <Banner />
             <Hero />
             <Chef />

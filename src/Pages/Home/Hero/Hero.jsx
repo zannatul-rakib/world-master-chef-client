@@ -3,7 +3,7 @@ import heroImage from "../../../assets/hero.jpg";
 
 const Hero = () => {
     return (
-        <div className='grid justify-center items-center'>
+        <div className='grid justify-center items-center lg:mx-20'>
             <div className="py-32 my-4">
   <div className="flex flex-col md:flex-row-reverse  md:justify-between md:items-center gap-8">
     <img src={heroImage} className="max-w-sm lg:max-w-xl rounded-lg shadow-2xl" />
