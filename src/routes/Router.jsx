@@ -7,7 +7,8 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRouter from "./PrivateRouter";
 import Blogs from "../Pages/Blogs/Blogs";
-import Chef from "../Pages/Home/Chef/Chef";
+import Recipes from "../Pages/Recipes/Recipes";
+import ChefPage from "../Pages/ChefPage/ChefPage";
 
 const router = createBrowserRouter([
     {
@@ -29,8 +30,12 @@ const router = createBrowserRouter([
             },
             {
                 path: 'chef',
-                element: <Chef />
+                element: <ChefPage />
             },
+            {
+                path: 'recipes',
+                element: <Recipes />
+            }
         ]
     },
     {

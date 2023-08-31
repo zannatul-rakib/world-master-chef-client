@@ -8,7 +8,7 @@ const MenuItem = () => {
             <li> <NavLink to="/">Home</NavLink></li>
             <li> <NavLink to="/blog">Blog</NavLink></li>
             <li> <NavLink to="/chef">Chef</NavLink></li>
-            <li> <NavLink to="/recipe">Recipe</NavLink></li>
+            <li> <NavLink to="/recipes">Recipe</NavLink></li>
         </>
     );
 };
