@@ -8,7 +8,7 @@ const Contact = () => {
                     <div>
                         <h4 className="text-xl uppercase text-accent font-medium mb-2 tracking-wide">get In touch</h4>
                         <h2 className="text-[45] lg:text-[50px] leading-none mb-12 font-semibold">
-                            lets Work <br /> Together!
+                            lets Work <br /> forever!
                         </h2>
                     </div>
                 </div>
