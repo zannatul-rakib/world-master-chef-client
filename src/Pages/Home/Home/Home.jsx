@@ -4,14 +4,17 @@ import Contact from '../Contact/Contact';
 import Hero from '../Hero/Hero';
 
 const Home = () => {
-   
+
     return (
-        <div className='my-8 box-border container mx-auto'>
+        <>
             <Banner />
-            <Hero />
-            <Chef />
-            <Contact/>
-        </div>
+            <div className='my-8 box-border container mx-auto'>
+
+                <Hero />
+                <Chef />
+                <Contact />
+            </div>
+        </>
     );
 };
 
