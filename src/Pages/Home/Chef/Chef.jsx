@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ChefCard from '../ChefCard/ChefCard';
 
 const Chef = () => {
     const [chefs, setChefs] = useState([])
-    
+
     useEffect(() => {
         fetch('https://world-master-chef-server-zrakib-dev.vercel.app/chef')
             .then(res => res.json())
-        .then(data => setChefs(data))
+            .then(data => setChefs(data))
 
-    },[])
+    }, [])
 
     return (
         <div className='lg:mx-20 mb-10 grid justify-items-center'>

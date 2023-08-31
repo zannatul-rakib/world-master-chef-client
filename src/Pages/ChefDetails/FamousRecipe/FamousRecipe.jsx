@@ -1,32 +1,48 @@
-import React from 'react';
+
 import Rating from 'react-rating';
-import {AiOutlineStar, AiFillStar} from "react-icons/ai"
-import {BsStarHalf} from "react-icons/bs"
+import { AiOutlineStar, AiFillStar } from "react-icons/ai"
+import { FcLike } from "react-icons/fc"
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const FamousRecipe = ({ recipe }) => {
-    const {name, picture, rating, country, details } = recipe;
+    const { name, picture, rating, id } = recipe;
+
+    const handleAddFavorite = (id) => {
+        localStorage.setItem('favorite-item', id)
+        toast('wow add to favorite')
+    }
+
     return (
         <div>
+            <ToastContainer />
             <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
-            <figure>
+                <figure>
                     <div className="h-[300px] w-full mb-5">
-                     <img src={picture} className='h-full w-full object-cover' alt={`${name} image`} />
+                        <img src={picture} className='h-full w-full object-cover' alt={`${name} image`} />
                     </div>
                 </figure>
                 <div className="px-5 pb-5">
-                    <a href="#">
-                        <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{ name}</h5>
-                    </a>
-                    <div className="flex items-center mt-2.5 mb-5">
-                    <Rating
-                        placeholderRating={rating}
-                        readonly
-                        emptySymbol={<AiOutlineStar className='text-warning'/>}
-                        placeholderSymbol={<AiFillStar className='text-warning'/>}
-                        fullSymbol={<AiFillStar/>}
-                    >    
-                    </Rating>
-                        <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">{ rating}</span>
+                    <div className='flex justify-between items-center'>
+                        <div>
+                            <a href="#">
+                                <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{name}</h5>
+                            </a>
+                            <div className="flex items-center mt-2.5 mb-5">
+                                <Rating
+                                    placeholderRating={rating}
+                                    readonly
+                                    emptySymbol={<AiOutlineStar className='text-warning' />}
+                                    placeholderSymbol={<AiFillStar className='text-warning' />}
+                                    fullSymbol={<AiFillStar />}
+                                >
+                                </Rating>
+                                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">{rating}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span onClick={() => handleAddFavorite(id)} title='Add to Favorite' className='cursor-pointer text-3xl'><FcLike /></span>
+                        </div>
                     </div>
                     <div className="flex items-center justify-between">
                         <span className="text-3xl font-bold text-gray-900 dark:text-white">$99</span>

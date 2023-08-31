@@ -1,0 +1,132 @@
+[
+  {
+    "id": 187361717396913,
+    "title": "Creamy Tomato Basil Pasta",
+    "author": "Jane Smith",
+    "ingredients": [
+      "2 cups penne pasta",
+      "1 can (14 oz) crushed tomatoes",
+      "1/4 cup heavy cream",
+      "1/4 cup fresh basil leaves, chopped",
+      "2 cloves garlic, minced",
+      "1/2 teaspoon red pepper flakes",
+      "Salt and pepper to taste",
+      "Grated Parmesan cheese, for serving"
+    ],
+    "instructions": [
+      "Cook the penne pasta according to package instructions. Drain and set aside.",
+      "In a large skillet, sauté the minced garlic and red pepper flakes in olive oil over medium heat until fragrant.",
+      "Add the crushed tomatoes and simmer for 10 minutes.",
+      "Stir in the heavy cream and chopped basil. Season with salt and pepper.",
+      "Add the cooked pasta to the sauce and toss to coat.",
+      "Serve with grated Parmesan cheese on top."
+    ],
+    "imageURL": "https://www.cookwithmanali.com/wp-content/uploads/2019/03/Creamy-Tomato-Basil-Pasta-Instant-Pot-500x375.jpg"
+  },
+  {
+    "id": 187361717396914,
+    "title": "Spicy Grilled Chicken Tacos",
+    "author": "John Doe",
+    "ingredients": [
+      "1 lb boneless, skinless chicken thighs",
+      "1 tablespoon chili powder",
+      "1 teaspoon cumin",
+      "1/2 teaspoon paprika",
+      "1/4 teaspoon cayenne pepper",
+      "Salt and pepper to taste",
+      "8 small corn tortillas",
+      "1 cup diced tomatoes",
+      "1/2 cup diced red onion",
+      "1/4 cup chopped cilantro",
+      "1/2 cup shredded cheddar cheese",
+      "Lime wedges, for serving"
+    ],
+    "instructions": [
+      "Preheat the grill to medium-high heat.",
+      "In a bowl, mix the chili powder, cumin, paprika, cayenne pepper, salt, and pepper.",
+      "Season the chicken thighs with the spice mixture.",
+      "Grill the chicken for 5-6 minutes per side, or until fully cooked.",
+      "Warm the corn tortillas on the grill for about 30 seconds per side.",
+      "Slice the grilled chicken and assemble the tacos with chicken, diced tomatoes, diced red onion, chopped cilantro, and shredded cheddar cheese.",
+      "Serve with lime wedges for squeezing over the tacos."
+    ],
+    "imageURL": "https://assets.tastemadecdn.net/images/4f9c8d/d137da4f5ea0ae81d6c9/5c3c5f.jpg"
+  },
+  {
+    "id": 187361717396915,
+    "title": "Caprese Salad with Balsamic Glaze",
+    "author": "Sara Johnson",
+    "ingredients": [
+      "2 large tomatoes, sliced",
+      "8 oz fresh mozzarella cheese, sliced",
+      "1 bunch fresh basil leaves",
+      "2 tablespoons balsamic glaze",
+      "2 tablespoons extra-virgin olive oil",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Alternate slices of tomato and fresh mozzarella on a serving plate.",
+      "Tuck fresh basil leaves between the slices.",
+      "Drizzle extra-virgin olive oil and balsamic glaze over the salad.",
+      "Season with salt and pepper to taste.",
+      "Serve as a refreshing appetizer or side dish."
+    ],
+    "imageURL": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/7/18/0/WU0314H_caprese-salad-recipe_s4x3.jpg.rend.hgtvcom.616.462.suffix/1530799895174.jpeg"
+  },
+  {
+    "id": 187361717396916,
+    "title": "Homestyle Beef Stew",
+    "author": "Michael Anderson",
+    "ingredients": [
+      "1.5 lbs beef stew meat, cubed",
+      "3 carrots, peeled and sliced",
+      "3 potatoes, peeled and diced",
+      "1 onion, chopped",
+      "2 cloves garlic, minced",
+      "4 cups beef broth",
+      "1 cup red wine",
+      "1 teaspoon thyme",
+      "1 teaspoon rosemary",
+      "Salt and pepper to taste",
+      "2 tablespoons olive oil"
+    ],
+    "instructions": [
+      "In a large pot, heat olive oil over medium-high heat.",
+      "Add the beef stew meat and brown on all sides. Remove from the pot and set aside.",
+      "In the same pot, sauté the chopped onion and minced garlic until translucent.",
+      "Add the beef back to the pot. Pour in the beef broth and red wine.",
+      "Stir in thyme and rosemary. Season with salt and pepper.",
+      "Simmer the stew for 1.5 to 2 hours, until the meat is tender.",
+      "Add the sliced carrots and diced potatoes. Continue to simmer until the vegetables are cooked.",
+      "Adjust seasoning if needed and serve hot."
+    ],
+    "imageURL": "https://scm-assets.constant.co/scm/unilever/e9dc924f238fa6cc29465942875fe8f0/21c608eb-258d-4b2a-800c-5feaeb9c82ed.jpg"
+  },
+  {
+    "id": 187361717396917,
+    "title": "Chocolate Raspberry Brownies",
+    "author": "Emily Williams",
+    "ingredients": [
+      "1 cup unsalted butter, melted",
+      "2 cups granulated sugar",
+      "1 teaspoon vanilla extract",
+      "3 large eggs",
+      "1/2 cup cocoa powder",
+      "1 cup all-purpose flour",
+      "1/2 teaspoon salt",
+      "1 cup fresh raspberries",
+      "1/2 cup chocolate chips"
+    ],
+    "instructions": [
+      "Preheat the oven to 350°F (175°C). Grease and line a baking pan with parchment paper.",
+      "In a bowl, mix melted butter, sugar, and vanilla extract.",
+      "Add eggs one at a time, mixing well after each addition.",
+      "Stir in cocoa powder, flour, and salt until just combined.",
+      "Fold in fresh raspberries and chocolate chips.",
+      "Pour the batter into the prepared pan and smooth the top.",
+      "Bake for 25-30 minutes, or until a toothpick inserted into the center comes out with a few moist crumbs.",
+      "Let the brownies cool before slicing and serving."
+    ],
+    "imageURL": "https://img.taste.com.au/bAZbNFSf/taste/2016/11/raspberry-brownie-102635-1.jpeg"
+  }
+]

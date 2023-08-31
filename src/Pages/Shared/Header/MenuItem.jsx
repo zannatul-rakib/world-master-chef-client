@@ -1,15 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { NavLink } from 'react-router-dom';
 
 const MenuItem = () => {
     return (
-        
-                <>
-                    <li> <Link to="/">Home</Link></li>
-                    <li> <Link to="/about">Blog</Link></li>
-                    <li> <Link to="/chef">Chef</Link></li>
-                    <li> <Link to="/recipe">Recipe</Link></li>
-                </>
+
+        <>
+            <li> <NavLink to="/">Home</NavLink></li>
+            <li> <NavLink to="/blog">Blog</NavLink></li>
+            <li> <NavLink to="/chef">Chef</NavLink></li>
+            <li> <NavLink to="/recipe">Recipe</NavLink></li>
+        </>
     );
 };
 

@@ -6,6 +6,8 @@ import ChefDetails from "../Pages/ChefDetails/ChefDetails";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRouter from "./PrivateRouter";
+import Blogs from "../Pages/Blogs/Blogs";
+import Chef from "../Pages/Home/Chef/Chef";
 
 const router = createBrowserRouter([
     {
@@ -14,26 +16,34 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home/>
+                element: <Home />
             },
             {
                 path: "/chef/:id",
                 element: <PrivateRouter><ChefDetails /></PrivateRouter>,
-                loader: ({params})  => fetch(`https://world-master-chef-server-zrakib-dev.vercel.app/chef/${params.id}`)
-            }
+                loader: ({ params }) => fetch(`https://world-master-chef-server-zrakib-dev.vercel.app/chef/${params.id}`)
+            },
+            {
+                path: 'blog',
+                element: <Blogs />
+            },
+            {
+                path: 'chef',
+                element: <Chef />
+            },
         ]
     },
     {
         path: "/login",
-        element: <Login/>
+        element: <Login />
     },
     {
         path: "/signup",
-        element: <SignUp/>
+        element: <SignUp />
     },
     {
         path: "*",
-        element: <Error/>
+        element: <Error />
     }
 ])
 
